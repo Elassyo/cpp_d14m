@@ -6,6 +6,7 @@
 */
 
 #include <cstring>
+#include <typeinfo>
 #include "LittleHand.hpp"
 
 void LittleHand::sortFruitBox(FruitBox &unsorted,
@@ -46,4 +47,9 @@ FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
 	delete[] res;
 	tmp[boxes] = nullptr;
 	return (tmp);
+}
+
+void LittleHand::plugMixer(MixerBase &mixer)
+{
+	((Mixer&)mixer).plug();
 }
