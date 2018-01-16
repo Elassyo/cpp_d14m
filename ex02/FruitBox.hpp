@@ -20,7 +20,7 @@ public:
 
 	int nbFruits() const;
 	bool putFruit(const Fruit *f);
-	const Fruit *pickFruit();
+	Fruit *pickFruit();
 	FruitNode *head() const;
 
 private:

@@ -19,7 +19,6 @@ public:
 protected:
 	Fruit(std::string name, int vitamins);
 
-private:
 	const std::string _name;
 	int _vitamins;
 };

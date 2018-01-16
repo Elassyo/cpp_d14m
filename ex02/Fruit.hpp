@@ -18,9 +18,8 @@ public:
 protected:
 	Fruit(std::string name, int vitamins);
 
-private:
 	const std::string _name;
-	const int _vitamins;
+	int _vitamins;
 };
 
 #endif /* !defined (FRUIT_HPP_) */

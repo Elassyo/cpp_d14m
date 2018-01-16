@@ -45,7 +45,7 @@ bool FruitBox::putFruit(const Fruit *f)
 	return (true);
 }
 
-const Fruit *FruitBox::pickFruit()
+Fruit *FruitBox::pickFruit()
 {
 	FruitNode *node = this->_head;
 	if (!node)
@@ -54,7 +54,7 @@ const Fruit *FruitBox::pickFruit()
 	const Fruit *res = node->fruit;
 	delete node;
 	this->_count--;
-	return res;
+	return ((Fruit*)res);
 }
 
 FruitNode *FruitBox::head() const
