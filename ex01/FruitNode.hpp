@@ -10,6 +10,8 @@
 
 	#include "Fruit.hpp"
 
+	#define Fruitnode FruitNode
+
 typedef struct FruitNode {
 	Fruit *fruit;
 	struct FruitNode *next;
