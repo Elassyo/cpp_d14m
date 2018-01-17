@@ -12,7 +12,9 @@
 
 class Fruit {
 public:
-	std::string getName() const;
+	virtual ~Fruit() {}
+
+	virtual std::string getName() const;
 	int getVitamins() const;
 
 protected:

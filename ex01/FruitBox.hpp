@@ -19,7 +19,7 @@ public:
 	FruitBox &operator=(const FruitBox &other) = delete;
 
 	int nbFruits() const;
-	bool putFruit(Fruit *f);
+	bool putFruit(const Fruit *f);
 	Fruit *pickFruit();
 	FruitNode *head() const;
 

@@ -13,7 +13,7 @@
 	#define Fruitnode FruitNode
 
 typedef struct FruitNode {
-	Fruit *fruit;
+	const Fruit *fruit;
 	struct FruitNode *next;
 } FruitNode;
 

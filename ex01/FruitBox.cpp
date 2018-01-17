@@ -27,7 +27,7 @@ int FruitBox::nbFruits() const
 	return (this->_count);
 }
 
-bool FruitBox::putFruit(Fruit *f)
+bool FruitBox::putFruit(const Fruit *f)
 {
 	if (this->_count == this->_capacity)
 		return (false);
@@ -51,10 +51,10 @@ Fruit *FruitBox::pickFruit()
 	if (!node)
 		return (nullptr);
 	this->_head = node->next;
-	Fruit *res = node->fruit;
+	const Fruit *res = node->fruit;
 	delete node;
 	this->_count--;
-	return res;
+	return ((Fruit*)res);
 }
 
 FruitNode *FruitBox::head() const

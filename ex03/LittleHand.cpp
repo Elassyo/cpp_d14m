@@ -6,8 +6,10 @@
 */
 
 #include <cstring>
-#include <typeinfo>
 #include "LittleHand.hpp"
+#include "Banana.hpp"
+#include "Lemon.hpp"
+#include "Lime.hpp"
 
 void LittleHand::sortFruitBox(FruitBox &unsorted,
 	FruitBox &lemons, FruitBox &bananas, FruitBox &limes)
@@ -15,13 +17,13 @@ void LittleHand::sortFruitBox(FruitBox &unsorted,
 	int count = unsorted.nbFruits();
 	for (int i = 0; i < count; i++) {
 		bool res = false;
-		const Fruit *f = unsorted.pickFruit();
-		if (f->getName() == "lemon")
-			res = lemons.putFruit(f);
-		else if (f->getName() == "banana")
-			res = bananas.putFruit(f);
-		else if (f->getName() == "lime")
+		Fruit *f = unsorted.pickFruit();
+		if (dynamic_cast<Lime*>(f) != nullptr)
 			res = limes.putFruit(f);
+		else if (dynamic_cast<Lemon*>(f) != nullptr)
+			res = lemons.putFruit(f);
+		else if (dynamic_cast<Banana*>(f) != nullptr)
+			res = bananas.putFruit(f);
 		if (!res)
 			unsorted.putFruit(f);
 	}
@@ -29,6 +31,8 @@ void LittleHand::sortFruitBox(FruitBox &unsorted,
 
 FruitBox * const *LittleHand::organizeCoconut(Coconut const * const *coconuts)
 {
+	if (!coconuts)
+		return NULL;
 	size_t boxes = 0;
 	FruitBox **res = nullptr;
 	FruitBox **tmp;
